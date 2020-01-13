@@ -17,6 +17,7 @@ int main(){
                 }
                 else if(arr[i+2]==1){
                     count++;
+                    i++;
                 }
             }
             else if(arr[i+1]==1){

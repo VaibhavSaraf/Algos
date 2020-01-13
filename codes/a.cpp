@@ -19,6 +19,9 @@ int main(){
                     count++;
                 }
             }
+            else if(arr[i+1]==1){
+                count++;
+            }
         }
     }
     cout<<count<<endl;

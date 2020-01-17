@@ -15,3 +15,7 @@ link : https://www.coursera.org/specializations/algorithms?ranMID=40328&ranEAID=
 
 course 3 : Data Structures & Algorithms ! (Udemy)  
 link : https://www.udemy.com/course/learn-data-structure-algorithms-with-java-interview/?LSNPUBID=vedj0cWlu2Y&ranEAID=vedj0cWlu2Y&ranMID=39197&ranSiteID=vedj0cWlu2Y-WiCZDCOLxoDudGrD29Li5g
+
+
+course 4 : Algorithms, Part I  
+link : https://www.coursera.org/learn/algorithms-part1

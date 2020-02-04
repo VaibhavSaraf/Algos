@@ -6,12 +6,12 @@ int main()
     cin>>t;
     while(t)
     {
-        int n;
-        cin>>n;
-        int *arr = new int [n];
-        for(int i=0;i<n;i++)
+        int n,k;
+        cin>>n; cin>>k;
+        int *arr = new int arr[n];
+        for(int i=n;i>0;i++)
         {
-            cin>>arr[i];
+            arr[i] = k/(10*i);
         }
         int sum = 0;
         for(int i=0;i<n;i++)
@@ -25,9 +25,10 @@ int main()
                 cout<<arr[i];
             }
         }
-        
-        
-        
+        else
+        {
+            cout<<"ajun nahi lihila"<<endl;
+        }
         t--;
     }
 }

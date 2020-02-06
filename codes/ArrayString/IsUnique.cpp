@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cstring>
 #include <map>
 #include <algorithm>
 using namespace std;
@@ -55,13 +56,39 @@ void BySort(string s)
         cout << "string is unique" << endl;    
 }
 
+bool magic(string s)
+{
+    bool arr[128];
+    memset(arr,false,sizeof(arr));
+    if(s.length()>128) return false;
+    for (char c : s)
+    {
+        if(arr[int(c)])
+        {
+            return false;
+        }
+        arr[int(c)]=true;
+    }
+    return true;
+}
+
 int main()
 {
     string s;
     cin >> s;
     // usingMap(s); // O(N)
-    BySort(s); // O(NlogN)
+    // BySort(s); // O(NlogN)
     // but we have to determine without using extra data struture and in runtime O(N)
     // ........ 
+    if (magic(s))
+    {
+        cout << "string is unique" << endl;    
+    }
+    else
+    {
+        cout<<"string is not unique"<<endl;
+    }
+    // this gives runtime O(1) or say O(c) which is constant
+    
     return 0;
 }

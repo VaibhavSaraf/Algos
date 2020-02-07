@@ -1,13 +1,6 @@
 #include <iostream>
 #include <cstring>
 using namespace std;
-int mod(int x)
-{
-	if(x>0)
-		return x;
-	else
-		return -x;
-}
 
 string singleStep(string s1)
 {
@@ -23,27 +16,33 @@ string singleStep(string s1)
 
 bool checkPermutation(string s1, string s2)
 {
-	if(s1.length()==s2.length())
+	if(s1.length()!=s2.length())
 	{
 		return false;
 	}
-	int n = s1.length();
-	while(n)
+	for(int i=0;i<s1.length();i++)
 	{
-		
-		n--;
+		if(s1==s2)
+		{
+			return true;
+			break;
+		}
+		else
+		{
+			s2 = singleStep(s2);
+		}
 	}
-	
+	return false;
 }
 int main()
 {
     string s1,s2;
     cin>>s1;
-    // cin>>s2;
-    // if(checkPermutation(s1,s2))
-    // 	cout<<"Yes"<<endl;
-    // else
-    // 	cout<<"No"<<endl;
-    s1=singleStep(s1);
+	cin>>s2;
+    if(checkPermutation(s1,s2))
+     	cout<<"Yes"<<endl;
+    else
+     	cout<<"No"<<endl;
+	
     return 0;
 }

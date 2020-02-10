@@ -1,10 +1,12 @@
 #include <iostream>
+#define fast ios_base::sync_with_stdio(0);cin.tie(NULL);
 using namespace std;
 int main()
 {
+    fast 
     int T;
     cin>>T;
-    while (T)
+    while (T--)
     {
         int n,k;
         cin>>n>>k;
@@ -20,7 +22,6 @@ int main()
         }
         sum = sum % k;
         cout<<sum<<endl;
-        T--;
     }
     return 0;
 }

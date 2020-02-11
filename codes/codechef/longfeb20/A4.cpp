@@ -1,13 +1,13 @@
 #include <iostream>
-#define fast                      \
-    ios_base::sync_with_stdio(0); \
-    cin.tie(NULL);
+#include <algorithm>
+#define fast ios_base::sync_with_stdio(0); cin.tie(NULL);
 
 using namespace std;
 
 int main()
 {
-    fast int T;
+    fast 
+    int T;
     cin >> T;
     int n, p, *arr;
     string yes, no;
@@ -21,14 +21,32 @@ int main()
         {
             cin >> arr[i];
         }
-        bool flag = false;
-        for (int i = 0; i < n; i++)
+        sort(arr,arr+n);
+        int x = 0;
+        for(int i=0;i<n;i++)
         {
-            if (p % arr[i] == 0)
+            if(p%arr[i]!=0)
             {
-                flag = true;
+                int j = 0;
+                while (true)
+                {
+                    x = x + arr[i]*j;
+                    j++;
+                    if(x>p && x-arr[i]!=p)
+                    {
+                        cout<<yes<<endl;
+                        break;
+                    }
+                    
+                }
             }
+            else
+            {
+                int a1 = p/arr[i] - 1;
+            }
+            
         }
+        
     }
 
     return 0;

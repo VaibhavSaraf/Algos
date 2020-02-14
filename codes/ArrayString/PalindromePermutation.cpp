@@ -64,7 +64,7 @@ int main()
             }
             
         }
-        if(flag && flag1 && count == 1)
+        if(flag || flag1 || count == 1)
         {
             cout<<"Yes"<<endl;
         }

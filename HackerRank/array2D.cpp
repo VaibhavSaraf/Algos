@@ -11,16 +11,16 @@ int main()
     }
 
     int x=0;
-    int sum=0;
     int maxsum=-10000;
     for(int i=0;i<4;i++)
     {
+        int sum=0;
         for(int j=x;j<x+3;j++)
         {
             sum=sum+a[i][j];
             sum=sum+a[i+2][j];
             if(j==x)
-                sum=sum+a[i+1][j+1];
+                sum=sum+a[i+1][x+1];
         }
         if(sum>maxsum)
             maxsum=sum;
@@ -32,5 +32,7 @@ int main()
             i--;
         
     }
-    cout<<sum;
+    cout<<maxsum;
+
+    return 0;
 }

@@ -1,55 +1,46 @@
 #include <bits/stdc++.h>
-#define fast ios_base::sync_with_stdio(0);cin.tie(NULL);
+#define fast                      \
+    ios_base::sync_with_stdio(0); \
+    cin.tie(NULL);
 using namespace std;
+void swapy(int *arr, int i, int j)
+{
+}
 int main()
 {
-    fast
-    int T,n,*arr;
-    bool *num;
-    cin>>T;
+    fast int T, n, *arr;
+    cin >> T;
     while (T--)
     {
         bool flag = false;
-        cin>>n;
-        arr = new int [n];
-        num = new bool [n];
-        for(int i = 0; i<n; i++)
+        int ans = 0;
+        cin >> n;
+        arr = new int[n];
+        for (int i = 0; i < n; i++)
         {
-            cin>>arr[i];
-            num[i]=false;
+            cin >> arr[i];
         }
-        int count = 0;
-        for(int i=0;i<n;i++)
+        for (int i = n - 1; i >= 0; i--)
         {
-            if(arr[i]>i+3 || arr[i]<i-3)
+            if(arr[i] - (i+1) > 2)
             {
                 flag = true;
                 break;
             }
-            else
+            for(int j=max(0,arr[i]-2);j<i;j++)
             {
-                if(arr[i]==i+1)
+                if(arr[j]>arr[i])
                 {
-                    num[i]=true;
-                    continue;
-                }
-                if(arr[arr[i]-1]!=i-1 && num[i]==false)
-                {
-                    num[i]=true;
-                    count++;
+                    ans++;
                 }
             }
         }
-        if(flag==true)
-        {
-            cout<<"Too chaotic"<<endl;
-        }
+        if (flag)
+            cout << "Too chaotic" << endl;
         else
         {
-            cout<<count-1<<endl;
+            cout << ans << endl;
         }
-
     }
-    
     return 0;
 }

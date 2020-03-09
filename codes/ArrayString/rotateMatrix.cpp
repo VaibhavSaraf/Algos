@@ -3,6 +3,7 @@
 using namespace std;
 int main()
 {
+    fast
     int n,a;cin>>n;
     
     int arr[n][n],arr1[n][n];
